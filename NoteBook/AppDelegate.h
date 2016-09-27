@@ -12,6 +12,5 @@
 
 @property (strong, nonatomic) UIWindow *window; //contains all views
 
-
 @end
 

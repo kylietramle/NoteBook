@@ -21,7 +21,9 @@
     
     NotesTableViewController *notesTVC = [[NotesTableViewController alloc] initWithStyle:UITableViewStylePlain];
     
-    self.window.rootViewController = notesTVC;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController: notesTVC];
+    
+    self.window.rootViewController = nav;
     
     // method in the UIWindow object
     [self.window makeKeyAndVisible];

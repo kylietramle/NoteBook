@@ -12,6 +12,7 @@
 		61285CD01D9462A200659117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61285CCF1D9462A200659117 /* Assets.xcassets */; };
 		61285CD31D9462A200659117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61285CD11D9462A200659117 /* LaunchScreen.storyboard */; };
 		61285CDC1D94680A00659117 /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61285CDB1D94680A00659117 /* NotesTableViewController.m */; };
+		61285CE21D9B0AD800659117 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 61285CE11D9B0AD800659117 /* Note.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		61285CD41D9462A200659117 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61285CDA1D94680A00659117 /* NotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesTableViewController.h; sourceTree = "<group>"; };
 		61285CDB1D94680A00659117 /* NotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesTableViewController.m; sourceTree = "<group>"; };
+		61285CE01D9B0AD800659117 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		61285CE11D9B0AD800659117 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 				61285CC31D9462A200659117 /* Supporting Files */,
 				61285CDA1D94680A00659117 /* NotesTableViewController.h */,
 				61285CDB1D94680A00659117 /* NotesTableViewController.m */,
+				61285CE01D9B0AD800659117 /* Note.h */,
+				61285CE11D9B0AD800659117 /* Note.m */,
 			);
 			path = NoteBook;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 				61285CC81D9462A200659117 /* AppDelegate.m in Sources */,
 				61285CC51D9462A200659117 /* main.m in Sources */,
 				61285CDC1D94680A00659117 /* NotesTableViewController.m in Sources */,
+				61285CE21D9B0AD800659117 /* Note.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

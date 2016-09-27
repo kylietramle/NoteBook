@@ -4,36 +4,42 @@
 //
 //  Created by Kylie Tram Le on 9/22/16.
 //  Copyright © 2016 Kylie Tram Le. All rights reserved.
-//
+
+
+// Implementation file: code to implement header methods
 
 #import "NotesTableViewController.h"
 
 @interface NotesTableViewController ()
-
+@property (copy, nonatomic) NSArray *notes; // array to store data
 @end
 
 @implementation NotesTableViewController 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // register reusablecell identifer
+    [self.tableView registerClass: [UITableViewCell class] forCellReuseIdentifier:@"NoteCell"];
+    
+    self.notes = @[@"Wilbur", @"Wilbee", @"Willy", @"Willy-kun"];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.notes.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NoteCell" forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    cell.textLabel.text = self.notes[indexPath.row];
     return cell;
+    
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
