@@ -9,6 +9,7 @@
 // Implementation file: code to implement header methods
 
 #import "NotesTableViewController.h"
+#import "Note.h"
 
 @interface NotesTableViewController ()
 @property (copy, nonatomic) NSArray *notes; // array to store data
@@ -22,7 +23,12 @@
     // register reusablecell identifer
     [self.tableView registerClass: [UITableViewCell class] forCellReuseIdentifier:@"NoteCell"];
     
-    self.notes = @[@"Wilbur", @"Wilbee", @"Willy", @"Willy-kun"];
+    Note *note1 = [[Note alloc] init];
+    note1.noteText = @"Kylie is making iOS app";
+    Note *note2 = [[Note alloc] init];
+    note2.noteText = @"Please work work work work work";
+    
+    self.notes = @[note1, note2];
 }
 
 #pragma mark - Table view data source
@@ -35,7 +41,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NoteCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = self.notes[indexPath.row];
+    // create a Note object
+    Note *note = self.notes[indexPath.row];
+                  
+    // pass noteText method into the object that is returned
+    cell.textLabel.text = note.noteText;
+    
     return cell;
     
 }

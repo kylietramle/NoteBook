@@ -10,4 +10,5 @@
 
 @interface Note : NSObject
 
+@property (strong, nonatomic) NSString *noteText;
 @end
