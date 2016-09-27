@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "NotesTableViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +16,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    // set window a frame that can fit on device's screen
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    NotesTableViewController *notesTVC = [[NotesTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    
+    self.window.rootViewController = notesTVC;
+    
+    // method in the UIWindow object
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
