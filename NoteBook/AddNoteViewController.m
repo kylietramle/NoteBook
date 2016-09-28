@@ -7,8 +7,11 @@
 //
 
 #import "AddNoteViewController.h"
+#import "Note.h"
 
-@interface AddNoteViewController ()
+@interface AddNoteViewController () <UITextFieldDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *textField;
 
 @end
 
@@ -22,4 +25,18 @@
 - (IBAction)cancelButtonTapped: (id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder]; // make keyboard go away
+    
+    Note *note = [[Note alloc] init];
+    note.noteText = textField.text;
+    
+    [self.delegate saveNote:note];
+    
+    NSLog(@"textField text: %@", textField.text);
+    
+    return YES;
+}
+
 @end

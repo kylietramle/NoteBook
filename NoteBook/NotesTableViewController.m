@@ -12,7 +12,7 @@
 #import "Note.h"
 #import "AddNoteViewController.h"
 
-@interface NotesTableViewController ()
+@interface NotesTableViewController () <AddNoteViewControllerDelegate>
 @property (copy, nonatomic) NSArray *notes; // array to store data
 @end
 
@@ -24,12 +24,11 @@
     // register reusablecell identifer
     [self.tableView registerClass: [UITableViewCell class] forCellReuseIdentifier:@"NoteCell"];
     
-    Note *note1 = [[Note alloc] init];
-    note1.noteText = @"Kylie is making iOS app";
-    Note *note2 = [[Note alloc] init];
-    note2.noteText = @"Please work work work work work";
-    
-    self.notes = @[note1, note2];
+    if([Note readNotesFromFile] == nil) {
+        self.notes = @[];
+    } else {
+        self.notes = [Note readNotesFromFile];
+    }
     
     // add cancel button
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action:@selector(addButtonTapped:)];
@@ -40,10 +39,27 @@
     // method that triggered when button is pressed
     - (void)addButtonTapped: (id)sender {
     AddNoteViewController *addNoteVC = [[AddNoteViewController alloc] initWithNibName:@"AddNoteViewController" bundle: [NSBundle mainBundle]];
+        addNoteVC.delegate = self; // this is the delegate that accepts
         
         [self presentViewController:addNoteVC animated:YES completion:nil];
 }
 
+- (void)saveNote:(Note *)note; {
+    NSLog(@"saveNote called: %@", note.noteText);
+    
+    // after note is saved, view is dismissed
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    // create an array which can add data (original is NSArray)
+    NSMutableArray *mutableNotes = [[NSMutableArray alloc] initWithArray:self.notes];
+    [mutableNotes addObject:note];
+    self.notes = [mutableNotes copy];
+    
+    [Note saveNotesToFile:self.notes];
+    
+    // reload tableView so info can refresh
+    [self.tableView reloadData];
+}
 
 #pragma mark - Table view data source
 
