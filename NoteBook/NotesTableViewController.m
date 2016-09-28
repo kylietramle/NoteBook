@@ -10,12 +10,13 @@
 
 #import "NotesTableViewController.h"
 #import "Note.h"
+#import "AddNoteViewController.h"
 
 @interface NotesTableViewController ()
 @property (copy, nonatomic) NSArray *notes; // array to store data
 @end
 
-@implementation NotesTableViewController 
+@implementation NotesTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,7 +30,20 @@
     note2.noteText = @"Please work work work work work";
     
     self.notes = @[note1, note2];
+    
+    // add cancel button
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action:@selector(addButtonTapped:)];
+    
+    self.navigationItem.leftBarButtonItem = addButton;
 }
+
+    // method that triggered when button is pressed
+    - (void)addButtonTapped: (id)sender {
+    AddNoteViewController *addNoteVC = [[AddNoteViewController alloc] initWithNibName:@"AddNoteViewController" bundle: [NSBundle mainBundle]];
+        
+        [self presentViewController:addNoteVC animated:YES completion:nil];
+}
+
 
 #pragma mark - Table view data source
 

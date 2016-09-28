@@ -13,6 +13,8 @@
 		61285CD31D9462A200659117 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61285CD11D9462A200659117 /* LaunchScreen.storyboard */; };
 		61285CDC1D94680A00659117 /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61285CDB1D94680A00659117 /* NotesTableViewController.m */; };
 		61285CE21D9B0AD800659117 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 61285CE11D9B0AD800659117 /* Note.m */; };
+		61285CE51D9B290A00659117 /* AddNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61285CE41D9B290A00659117 /* AddNoteViewController.m */; };
+		61285CE71D9B29B300659117 /* AddNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61285CE61D9B29B300659117 /* AddNoteViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,9 @@
 		61285CDB1D94680A00659117 /* NotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesTableViewController.m; sourceTree = "<group>"; };
 		61285CE01D9B0AD800659117 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		61285CE11D9B0AD800659117 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		61285CE31D9B290A00659117 /* AddNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddNoteViewController.h; sourceTree = "<group>"; };
+		61285CE41D9B290A00659117 /* AddNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddNoteViewController.m; sourceTree = "<group>"; };
+		61285CE61D9B29B300659117 /* AddNoteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddNoteViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +74,9 @@
 				61285CDB1D94680A00659117 /* NotesTableViewController.m */,
 				61285CE01D9B0AD800659117 /* Note.h */,
 				61285CE11D9B0AD800659117 /* Note.m */,
+				61285CE31D9B290A00659117 /* AddNoteViewController.h */,
+				61285CE41D9B290A00659117 /* AddNoteViewController.m */,
+				61285CE61D9B29B300659117 /* AddNoteViewController.xib */,
 			);
 			path = NoteBook;
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61285CD31D9462A200659117 /* LaunchScreen.storyboard in Resources */,
+				61285CE71D9B29B300659117 /* AddNoteViewController.xib in Resources */,
 				61285CD01D9462A200659117 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +163,7 @@
 				61285CC51D9462A200659117 /* main.m in Sources */,
 				61285CDC1D94680A00659117 /* NotesTableViewController.m in Sources */,
 				61285CE21D9B0AD800659117 /* Note.m in Sources */,
+				61285CE51D9B290A00659117 /* AddNoteViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
