@@ -33,7 +33,10 @@
     // add cancel button
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd target:self action:@selector(addButtonTapped:)];
     
+    UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemTrash target:self action:@selector(deleteButtonTapped:)];
+    
     self.navigationItem.leftBarButtonItem = addButton;
+    self.navigationItem.rightBarButtonItem = deleteButton;
 }
 
     // method that triggered when button is pressed
@@ -42,6 +45,14 @@
         addNoteVC.delegate = self; // this is the delegate that accepts
         
         [self presentViewController:addNoteVC animated:YES completion:nil];
+}
+
+    - (void)deleteButtonTapped:(id)sender {
+     // delete archive file from disk
+        [Note removeArchiveFile];
+        
+        self.notes = nil; // delete from memory
+        [self.tableView reloadData];
 }
 
 - (void)saveNote:(Note *)note; {
